@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
             FirebaseGoogleAuth(acc);
         }
         catch (ApiException e){
-            Toast.makeText(MainActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(null);
         }
     }
@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else{
-            Toast.makeText(MainActivity.this, "acc failed", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(MainActivity.this, "acc failed", Toast.LENGTH_SHORT).show();
         }
     }
 }

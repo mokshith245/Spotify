@@ -87,6 +87,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:background="#739BBD"
+            android:cursorVisible="true"
             android:text="login"
             android:textColor="#7C031D"
             android:textSize="24sp" />
@@ -97,6 +98,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
             android:background="#739BBD"
+            android:cursorVisible="true"
             android:text="@string/sign_up"
             android:textColor="#7C031D"
             android:textSize="24sp" />
