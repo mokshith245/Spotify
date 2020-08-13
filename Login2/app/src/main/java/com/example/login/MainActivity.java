@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -41,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     EditText  passwordEditText;
     private GoogleSignInClient mGoogleSignInClient;
     private  String TAG = "MainActivity";
-    private FirebaseAuth mAuth;
+    static FirebaseAuth mAuth;
     private int RC_SIGN_IN = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -209,10 +208,10 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             currentUser = user;
-
+            Intent intent = new Intent(getApplicationContext(),NavigationActivity.class);
+            startActivity(intent);
         }
-        Intent intent = new Intent(getApplicationContext(),NavigationActivity.class);
-        startActivity(intent);
+
 
     }
 }
