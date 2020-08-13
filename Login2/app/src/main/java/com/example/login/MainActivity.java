@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference reference;
     Button googleSignIn;
+    FirebaseUser currentUser;
     Button loginButton;
     Button signUpButton;
     EditText emailEditText;
@@ -59,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
         signUpButton = findViewById(R.id.signupButton);
 
         mAuth = FirebaseAuth.getInstance();
+
+        currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -197,6 +203,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user) {
+
+        if (user == null) {
+            return;
+        }
+        else {
+            currentUser = user;
+
+        }
+        Intent intent = new Intent(getApplicationContext(),NavigationActivity.class);
+        startActivity(intent);
 
     }
 }
